@@ -1,0 +1,23 @@
+<h1>List of all users</h1>
+
+
+<table>
+<% @list_of_plans.each do |a_plan| %>
+
+        <td>
+          <%= a_plan.user_id %>
+        </td>
+
+        <td>
+          <%= a_plan.username %>
+        </td>
+
+
+        <td>
+          <a href="/users/<%= a_plan.username %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+</table>

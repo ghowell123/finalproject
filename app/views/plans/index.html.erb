@@ -1,0 +1,136 @@
+<div>
+  <div>
+    <h1>
+      List of all plans
+    </h1>
+  </div>
+</div>
+
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Activity
+        </th>
+
+        <th>
+          Intended Time
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Username
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_plans.each do |a_plan| %>
+      <tr>
+        <td>
+          <%= a_plan.id %>
+        </td>
+
+        <td>
+          <%= a_plan.activity %>
+        </td>
+
+        <td>
+          <%= a_plan.time %>
+        </td>
+
+        <td>
+          <%= a_plan.user_id %>
+        </td>
+
+        <td>
+          <%= a_plan.username %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_plan.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_plan.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/plans/<%= a_plan.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Add a new plan
+    </h2>
+
+    <form action="/insert_plan" method="post">
+      <div>
+        <label for="activity_box">
+          Activity
+        </label>
+
+        <input type="text" id="activity_box" name="query_activity">
+      </div>
+
+      <div>
+        <label for="time_box">
+          Time
+        </label>
+
+        <input type="time" id="time_box" name="query_time">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="username_box">
+          Username
+        </label>
+
+        <input type="text" id="username_box" name="query_username">
+      </div>
+
+      <button>
+        Create plan
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
