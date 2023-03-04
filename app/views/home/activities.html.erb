@@ -1,0 +1,35 @@
+<h1>Users' Suggested Activities</h1>
+
+should list each activity, then filter it by alphabetical and no repeats, then link to a page with all of the plans under this activity category 
+
+
+<table>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          Activity
+        </th>
+
+        <th>
+          Username 
+        </th>
+
+      </tr>
+
+<% @list_of_plans.each do |a_plan| %>
+
+        <td>
+          <%= a_plan.activity %>
+        </td>
+
+
+        <td>
+         <%= a_plan.username %>
+        </td>
+      </tr>
+      <% end %>
+</table>

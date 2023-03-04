@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   # takes you to a show details page of the user, populated with all of that user's plans 
   get("/users/:username", { :controller => "users", :action => "details"})
 
+  #activities page -- page of all the activities, not specific plans, then details of the plans for each activity
+  get("/activities", { :controller => "users", :action => "activities"})
+  
+
+
   # Routes for the Plan resource:
 
   # CREATE
