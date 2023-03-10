@@ -1,4 +1,9 @@
-<h1><%= @the_username %>'s plans </h1>
+<h1><%= @the_username.username %>'s plans </h1>
 
 
-should have a list of all of the plans associated with the user's username 
+<% if session[:username] != @the_username.username %>
+    
+    <%= @matching_usernames.at(0).activity %>
+    
+
+  <% end %>

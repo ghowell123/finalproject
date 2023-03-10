@@ -12,3 +12,22 @@
  *
  *= require_self
  */
+
+
+.name {
+  color: #33272a
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #faeee7;
+
+}
+
+
+.body {
+    background-color: #faeee7;
+  
+  }

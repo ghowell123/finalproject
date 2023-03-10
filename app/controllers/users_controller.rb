@@ -12,9 +12,9 @@ class UsersController < ApplicationController
    ## need to fill this in so that the user_details page prints the user's username and the associated plans. 
     username = params.fetch("username")
 
-    matching_usernames = Plan.where({ :username => username })
+    @matching_usernames = Plan.where({ :username => username })
 
-    @the_username = matching_usernames.at(0)
+    @the_username = @matching_usernames.at(0)
 
     render({ :template => "home/user_details.html.erb"})
   end 
